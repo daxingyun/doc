@@ -10,7 +10,7 @@
 #### 4、接口申请访问时需要提供数据校验信息。本文档中数据校验时加密秘钥变量名为signkey。
 #### 5、在做API接入前请先通过商务将要接入API的服务器IP设置到白名单中，同时获取接口通讯校验用的加密秘钥。
 
-#### 测试baseUrl：http://
+#### 测试baseUrl：http://47.105.34.241:2347
 
 ### 二、接口说明
 
@@ -18,9 +18,9 @@
 - **请求接口**
 > [/test/client/getImgCode](#)
 
->示例：
+示例：
 ```js
-    <img class="imgCode" src="/test/client/getImgCode" alt="">    
+    <img src="http://47.105.34.241:2347/test/client/getImgCode" alt="">    
 ```
 
 #### 2、卡密登录
