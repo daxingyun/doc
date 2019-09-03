@@ -18,8 +18,10 @@
 - **请求接口**
 > [/test/client/getImgCode](#)
 
-    示例：
+>示例：
+```js
     <img class="imgCode" src="/test/client/getImgCode" alt="">    
+```
 
 #### 2、卡密登录
 - **请求接口**
