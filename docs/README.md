@@ -16,7 +16,7 @@
 
 #### 1、获取图形验证码，用于登录接口
 - **请求接口**
-> [/test/client/getImgCode](#)
+> [/api/client/getImgCode](#)
 
 示例：
 ```js
@@ -25,7 +25,7 @@
 
 #### 2、卡密登录
 - **请求接口**
-> [/test/client/login](#)
+> [/api/client/login](#)
 - **请求方式**
 > **GET/POST**
 
@@ -57,7 +57,7 @@
 ```
 #### 3、查询卡密对应的权益
 - **请求接口**
-> [/test/client/getAllProfitByCardNo](#)
+> [/api/client/getAllProfitByCardNo](#)
 
 - **请求方式**
 > **GET/POST**
@@ -120,7 +120,7 @@
 
 #### 4、查询已选择的权益
 - **请求接口**
-> [/test/client/getSelectedProfit](#)
+> [/api/client/getSelectedProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -180,7 +180,7 @@
 
 #### 5、提交选择卡密对应的权益
 - **请求接口**
-> [/test/client/selectProfit](#)
+> [/api/client/selectProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -212,7 +212,7 @@
 
 #### 6、查询权益详情
 - **请求接口**
-> [/test/client/getProfitDetail](#)
+> [/api/client/getProfitDetail](#)
 
 - **请求方式**
 > **GET/POST**
@@ -255,7 +255,7 @@
 
 #### 7、提交选择卡密对应的权益
 - **请求接口**
-> [/test/client/takeProfit](#)
+> [/api/client/takeProfit](#)
 
 - **请求方式**
 > **GET/POST**
