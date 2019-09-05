@@ -10,22 +10,22 @@
 #### 4、接口申请访问时需要提供数据校验信息。本文档中数据校验时加密秘钥变量名为signkey。
 #### 5、在做API接入前请先通过商务将要接入API的服务器IP设置到白名单中，同时获取接口通讯校验用的加密秘钥。
 
-#### 测试baseUrl：http://47.105.34.241:2347
+#### 测试baseUrl：http://www.maoxiaojie.club:2347
 
 ### 二、接口说明
 
 #### 1、获取图形验证码，用于登录接口
 - **请求接口**
-> [/api/client/getImgCode](#)
+> [/test/client/getImgCode](#)
 
 示例：
 ```js
-    <img src="http://47.105.34.241:2347/test/client/getImgCode" alt="">    
+    <img src="http://www.maoxiaojie.club:2347/test/client/getImgCode" alt="">    
 ```
 
 #### 2、卡密登录
 - **请求接口**
-> [/api/client/login](#)
+> [/test/client/login](#)
 - **请求方式**
 > **GET/POST**
 
@@ -57,7 +57,7 @@
 ```
 #### 3、查询卡密对应的权益
 - **请求接口**
-> [/api/client/getAllProfitByCardNo](#)
+> [/test/client/getAllProfitByCardNo](#)
 
 - **请求方式**
 > **GET/POST**
@@ -120,7 +120,7 @@
 
 #### 4、查询已选择的权益
 - **请求接口**
-> [/api/client/getSelectedProfit](#)
+> [/test/client/getSelectedProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -180,7 +180,7 @@
 
 #### 5、提交选择卡密对应的权益
 - **请求接口**
-> [/api/client/selectProfit](#)
+> [/test/client/selectProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -212,7 +212,7 @@
 
 #### 6、查询权益详情
 - **请求接口**
-> [/api/client/getProfitDetail](#)
+> [/test/client/getProfitDetail](#)
 
 - **请求方式**
 > **GET/POST**
@@ -255,7 +255,7 @@
 
 #### 7、提交选择卡密对应的权益
 - **请求接口**
-> [/api/client/takeProfit](#)
+> [/test/client/takeProfit](#)
 
 - **请求方式**
 > **GET/POST**
