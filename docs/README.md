@@ -16,16 +16,16 @@
 
 #### 1、获取图形验证码，用于登录接口
 - **请求接口**
-> [/test/client/getImgCode](#)
+> [/api/client/getImgCode](#)
 
 示例：
 ```js
-    <img src="http://www.maoxiaojie.club:2347/test/client/getImgCode" alt="">    
+    <img src="http://www.maoxiaojie.club:2347/api/client/getImgCode" alt="">    
 ```
 
 #### 2、卡密登录
 - **请求接口**
-> [/test/client/login](#)
+> [/api/client/login](#)
 - **请求方式**
 > **GET/POST**
 
@@ -120,7 +120,7 @@
 
 #### 4、查询已选择的权益
 - **请求接口**
-> [/test/client/getSelectedProfit](#)
+> [/api/client/getSelectedProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -180,7 +180,7 @@
 
 #### 5、提交选择卡密对应的权益
 - **请求接口**
-> [/test/client/selectProfit](#)
+> [/api/client/selectProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -212,7 +212,7 @@
 
 #### 6、查询权益详情
 - **请求接口**
-> [/test/client/getProfitDetail](#)
+> [/api/client/getProfitDetail](#)
 
 - **请求方式**
 > **GET/POST**
@@ -255,7 +255,7 @@
 
 #### 7、提交选择卡密对应的权益
 - **请求接口**
-> [/test/client/takeProfit](#)
+> [/api/client/takeProfit](#)
 
 - **请求方式**
 > **GET/POST**
@@ -292,5 +292,237 @@
 		"createTime": "2019-08-29 19:23:45"   //创建日期
 	}],
 	"bcxgame_id": "8e1f803f785bd741270c3eee"
+}
+```
+
+
+#### 8、根据客户编号获取账户余额
+- **请求接口**
+> [/api/server/queryAccountBalance](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data": {
+		"balance": 9662.5 // 余额
+	},
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
+}
+```
+
+
+#### 8、根据客户编号获取账户余额
+- **请求接口**
+> [/api/server/queryAccountBalance](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data": {
+		"balance": 9662.5 // 余额
+	},
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
+}
+```
+
+
+#### 9、查询客户附属套餐可买卡密限额
+- **请求接口**
+> [/api/server/queryPackageQuota](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| pgno | int | 是 | 1| 套餐标识 |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data": {
+		"paname": "腾讯视频vip" // 套餐名称
+		"price":200, // 套餐单价
+		"quota":20  // 可买限额
+	},
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
+}
+```
+
+#### 10、套餐单张卡密即时创建及提取接口
+- **请求接口**
+> [/api/server/createSingleCard](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| pgno | int | 是 | 1| 套餐标识 |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data": {
+		"pgname": "腾讯视频 vip",  //套餐名称
+        "price": 200,   // 套餐单价
+        "marketPrice": 200,  // 套餐市场价
+        "cardno": "1001110002345", // 卡密
+        "pass": "23456"  // 密码
+	},
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
+}
+```
+
+
+#### 11、查询套餐对应的权益列表接口
+- **请求接口**
+> [/api/server/queryProfitsListInPackages](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| packageid | int | 是 | 1| 套餐标识 |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data":[{
+		"id": 43,   // 权益标识
+		"profitName": "今今乐道读书会月卡",   // 权益名称
+		"profitType": 0,     // 权益类型 0：卷码  1：链接
+		"profitIcon": "http:\/\/47.105.34.241:9999\/upload\/20190728153216817661.jpg",   // icon 
+		"profitPrice": 30,   // 权益单价
+		"profitCount": 998,   // 权益总数
+		"profitStock": 971,   // 权益库存
+		"profitDetail": "<p style=\"text-align: center;\"><span style=\"white-space: nowrap;font-family:微软雅黑, Microsoft YaHei;font-size:24px\">【今今乐道读书会月卡使用方法】&nbsp;&nbsp;<\/span><\/p><p>1、在各大应用商店搜索今今乐道，下载安装今今乐道APP，在APP内完成兑换。<\/p><p>2、兑换路径：打开今今乐道APP——登陆——右下方“我的”页面——兑换码选项，输入兑换码即可。<\/p><p>3、兑换后直接生效，千本企业内训经典书籍免费听；<\/p><p>4、同一用户仅限兑换一次；30天到期后，免费听书权限自动失效。<\/p><p>5、总部客服：&nbsp; &nbsp; &nbsp;<\/p><p>联系人：乐道小妹<\/p><p>联系电话：010-53577662- 转999<\/p><p>邮箱：sa@dggroup.cn<\/p><p><img src=\"http:\/\/47.105.34.241:9999\/upload\/20190728153131404499.jpg\" _src=\"http:\/\/47.105.34.241:9999\/upload\/20190728153131404499.jpg\"\/><\/p>",     // 权益详情
+		"endTime": 1648742399,     // 过期时间
+		"profitBanner": "http:\/\/47.105.34.241:9999\/upload\/20190728153216955337.jpg",  // banner图
+		"profitService": null,   // service图
+		"exchangeUrl": "",   // 兑换跳转页面
+		"status": 1,
+		"gcount": null,
+		"createTime": "2019-07-28",
+		"endTimeStr": "2022-03-31"
+	}],
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
+}
+```
+
+
+#### 12、查询权益详情接口
+- **请求接口**
+> [/api/server/queryProfitsDetail](#)
+
+- **请求方式**
+> **GET/POST**
+
+
+- **请求参数**
+
+>
+| 名称 | 类型 | 是否必须 | 示例值 | 描述 |
+| -------- | --------| ------ | ------ | ------|
+| cpno | String | 是 | 1001| 客户编号 |
+| profitid | int | 是 | 23| 权益标识(对应查询套餐对应的
+权益列表接口里面的权益标识) |
+| applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+
+- **返回结果**
+```js
+{
+	"status": "success",
+	"code": 10000,
+	"msg": "成功",
+	"time": 1568166738,
+	"data": {
+		"id": 43,   // 权益标识
+		"profitName": "今今乐道读书会月卡",   // 权益名称
+		"profitType": 0,     // 权益类型 0：卷码  1：链接
+		"profitIcon": "http:\/\/47.105.34.241:9999\/upload\/20190728153216817661.jpg",   // icon 
+		"profitPrice": 30,   // 权益单价
+		"profitCount": 998,   // 权益总数
+		"profitStock": 971,   // 权益库存
+		"profitDetail": "<p style=\"text-align: center;\"><span style=\"white-space: nowrap;font-family:微软雅黑, Microsoft YaHei;font-size:24px\">【今今乐道读书会月卡使用方法】&nbsp;&nbsp;<\/span><\/p><p>1、在各大应用商店搜索今今乐道，下载安装今今乐道APP，在APP内完成兑换。<\/p><p>2、兑换路径：打开今今乐道APP——登陆——右下方“我的”页面——兑换码选项，输入兑换码即可。<\/p><p>3、兑换后直接生效，千本企业内训经典书籍免费听；<\/p><p>4、同一用户仅限兑换一次；30天到期后，免费听书权限自动失效。<\/p><p>5、总部客服：&nbsp; &nbsp; &nbsp;<\/p><p>联系人：乐道小妹<\/p><p>联系电话：010-53577662- 转999<\/p><p>邮箱：sa@dggroup.cn<\/p><p><img src=\"http:\/\/47.105.34.241:9999\/upload\/20190728153131404499.jpg\" _src=\"http:\/\/47.105.34.241:9999\/upload\/20190728153131404499.jpg\"\/><\/p>",     // 权益详情
+		"endTime": 1648742399,     // 过期时间
+		"profitBanner": "http:\/\/47.105.34.241:9999\/upload\/20190728153216955337.jpg",  // banner图
+		"profitService": null,   // service图
+		"exchangeUrl": "",   // 兑换跳转页面
+		"status": 1,
+		"gcount": null,
+		"createTime": "2019-07-28",
+		"endTimeStr": "2022-03-31"
+	},
+	"bcxgame_id": "9d83bcd4145ed74163893ecf"
 }
 ```
