@@ -376,7 +376,7 @@
 | cpno | String | 是 | 1001| 客户编号 |
 | pgno | int | 是 | 1| 套餐标识 |
 | applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
-| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+pgno+signkey)) |
 
 - **返回结果**
 ```js
@@ -410,7 +410,7 @@
 | cpno | String | 是 | 1001| 客户编号 |
 | pgno | int | 是 | 1| 套餐标识 |
 | applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
-| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+pgno+signkey)) |
 
 - **返回结果**
 ```js
@@ -447,7 +447,7 @@
 | cpno | String | 是 | 1001| 客户编号 |
 | packageid | int | 是 | 1| 套餐标识 |
 | applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
-| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+packageid+signkey)) |
 
 - **返回结果**
 ```js
@@ -496,7 +496,7 @@
 | profitid | int | 是 | 23| 权益标识(对应查询套餐对应的
 权益列表接口里面的权益标识) |
 | applytime | String | 是 | 20190420202111| 申请时间。Yyyymmddhhiiss，以北京时间为基准正负 5 分钟为有效数据。 |
-| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+signkey)) |
+| sign | String | 是 | ********| 数据校验串。创建规则：MD5(signkey+applytime+MD5(cpno+profitid+signkey)) |
 
 - **返回结果**
 ```js
