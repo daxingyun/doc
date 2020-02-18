@@ -10,7 +10,7 @@
 #### 4、接口申请访问时需要提供数据校验信息。本文档中数据校验时加密秘钥变量名为signkey。
 #### 5、在做API接入前请先通过商务将要接入API的服务器IP设置到白名单中，同时获取接口通讯校验用的加密秘钥。
 
-#### 测试baseUrl：http://www.maoxiaojie.club:2347
+#### 正式baseUrl：http://api.yintongquan.cn
 
 ### 二、接口说明
 
@@ -20,7 +20,7 @@
 
 示例：
 ```js
-    <img src="http://www.maoxiaojie.club:2347/api/client/getImgCode" alt="">    
+    <img src="http://api.yintongquan.cn/api/client/getImgCode" alt="">    
 ```
 
 #### 2、卡密登录
